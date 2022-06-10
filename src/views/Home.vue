@@ -50,9 +50,9 @@ import AudioPlayerVue from '../components/AudioPlayer.vue';
               {{ sponsor.description }}
             </p>
             <div class="flex flex-wrap max-w-max items-center first:ml-0 transition-all group-hover:mt-5 invisible group-hover:visible h-0 group-hover:h-auto">
-              <p v-show="sponsor.phone" class="text-white text-xs whitespace-nowrap mr-2">
+              <span v-show="sponsor.phone" class="bg-white rounded-2xl font-bold py-1 px-2 text-[10px] mt-2 whitespace-nowrap mr-2">
                 {{ sponsor.phone }}
-              </p>
+              </span>
               <a class="bg-green-600 py-1 px-2 rounded-2xl mr-2 mt-2 whitespace-nowrap" target="_blank" :href="sponsor.whatsapp" v-show="sponsor.whatsapp">
                   <div class="flex items-center">
                     <span class="text-[8px] font-bold text-white">Abrir en WhatsApp</span>
