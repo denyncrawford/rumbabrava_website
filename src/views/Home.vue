@@ -26,7 +26,7 @@ import AudioPlayerVue from '../components/AudioPlayer.vue';
             </p>
           </div>
         </div>
-        <div class="flex fixed 2xl:scale-100 xl:scale-75 w-full left-0 lg:scale-50 justify-center items-center lg:w-auto lg:right-40 lg:left-auto xl:right-52 lg:top-52">
+        <div class="flex fixed w-full z-50 left-0 justify-center items-center lg:w-auto lg:right-20 lg:left-auto xl:right-40 2xl:right-52 lg:top-52">
           <AudioPlayerVue />
         </div>
       </div>
@@ -41,7 +41,7 @@ import AudioPlayerVue from '../components/AudioPlayer.vue';
             class="p-5 md:hover:scale-125 grayscale hover:grayscale-0 hover:shadow-md transition-all hover:bg-neutral-800 group rounded cursor-pointer"
             v-for="sponsor in sponsors" :key="sponsor.name">
             <div class="flex">
-              <img v-if="sponsor.logo" :src="sponsor.logo" class="h-12 mr-2" />
+              <img v-if="sponsor.logo" :src="sponsor.logo" class="max-h-12 max-w-[100px] mr-2 opacity-70 group-hover:opacity-100" />
               <h1 class="text-lg group-hover:text-white text-neutral-600 font-bold">
                 {{ sponsor.name }}
               </h1>
@@ -49,12 +49,23 @@ import AudioPlayerVue from '../components/AudioPlayer.vue';
             <p class="text-white transition-all group-hover:mt-5 invisible h-0 group-hover:h-auto group-hover:visible text-sm">
               {{ sponsor.description }}
             </p>
-            <p class="text-white transition-all group-hover:mt-5 invisible h-0 group-hover:h-auto group-hover:visible text-xs">
-              {{ sponsor.phone }}
-              <a class="ml-1" target="_blank" :href="sponsor.whatsapp" v-show="sponsor.whatsapp">
-                <Icon class=" text-green-600" name="bi-whatsapp"/>
+            <div class="flex flex-wrap max-w-max items-center first:ml-0 transition-all group-hover:mt-5 invisible group-hover:visible h-0 group-hover:h-auto">
+              <p v-show="sponsor.phone" class="text-white text-xs whitespace-nowrap mr-2">
+                {{ sponsor.phone }}
+              </p>
+              <a class="bg-green-600 py-1 px-2 rounded-2xl mr-2 mt-2 whitespace-nowrap" target="_blank" :href="sponsor.whatsapp" v-show="sponsor.whatsapp">
+                  <div class="flex items-center">
+                    <span class="text-[8px] font-bold text-white">Abrir en WhatsApp</span>
+                    <Icon class="ml-1 text-white w-[14px] h-[14px]" name="bi-whatsapp"/>
+                  </div>
               </a>
-            </p>
+              <a class=" bg-indigo-500 py-1 px-2 rounded-2xl mr-2 mt-2 whitespace-nowrap" target="_blank" :href="sponsor.instagram" v-show="sponsor.instagram">
+                  <div class="flex items-center">
+                    <span class="text-[8px] font-bold text-white">Abrir en instagram</span>
+                    <Icon class="ml-1 text-white w-[14px] h-[14px]" name="bi-instagram"/>
+                  </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

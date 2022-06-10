@@ -103,14 +103,14 @@ watch(() => volume.value, (newValue) => {
 <template>
   <div v-if="currentBreakpoint.isGreaterThan('lg')" class="relative shadow-2xl">
     <div
-      class="w-[350px] h-[350px] rounded-[30px] shadow-lg -top-10 -left-10 z-10 bg-white absolute flex items-center justify-center">
-      <img :src="logo" class="w-[250px]" />
+      class="2xl:w-[350px] 2xl:h-[350px] w-[250px] h-[250px] rounded-[30px] shadow-lg -top-10 -left-10 z-10 bg-white absolute flex items-center justify-center">
+      <img :src="logo" class="2xl:w-[250px] w-[150px]" />
     </div>
     <div class="rounded-[30px] w-full h-full overflow-hidden relative shadow-2xl">
       <div class="bg-white opacity-75 w-full h-full absolute top-0 left-0">
       </div>
-      <div class="flex flex-col relative z-10 w-[420px]">
-        <div class="h-[350px]">
+      <div class="flex flex-col relative z-10 2xl:w-[420px] w-[300px]">
+        <div class="2xl:h-[350px] h-[250px]">
 
         </div>
         <div class="px-10 pb-10">
